@@ -3,11 +3,11 @@
     view="lHh Lpr lFf">
     <q-header class="bgColor">
       <q-toolbar class="row justify-between q-px-lg"
-        :class="$q.screen.gt.sm ? 'q-py-sm' : 'q-py-md'">
+        :class="$q.screen.gt.sm ? 'q-py-xs' : 'q-py-md'">
         <div class=""
           v-if="$q.screen.gt.sm">
           <div>
-            <img src="/logo.png"
+            <img src="/logo.svg"
               alt=""
               height="58px"
               width="160px" />
@@ -15,8 +15,7 @@
         </div>
         <div class="row text-center q-gutter-x-md headerFont text-white"
           v-if="$q.screen.gt.sm">
-          <div @click="$router.push('/home-index')"
-            class="cursor-pointer">
+          <div class="cursor-pointer">
             HOME
           </div>
           <div>CATEGORIES</div>
@@ -31,7 +30,7 @@
             v-if="$q.screen.lt.md">
             <q-menu content-class="bg-purple text-white"
               auto-close>
-              <q-list style="min-width: 100px">
+              <q-list>
                 <q-item clickable
                   to="/home-index">
                   <q-item-section>Home</q-item-section>
@@ -66,12 +65,11 @@
       </q-toolbar>
     </q-header>
 
-    <q-page-container>
+    <q-page-container class="background-image">
       <router-view />
     </q-page-container>
-    <q-footer class="backdrop-effect text-primary shadow-24 bgColor"
+    <q-footer class="backdrop-effect text-primary shadow-24 footer"
       v-if="$q.screen.lt.sm"
-      style="height: 90px"
       reveal>
       <q-item class="flex-center">
         <q-item-section class="text-center text-white"><q-item-label
@@ -89,15 +87,9 @@
         <q-item-section class="text-center"><q-item-label>
             <q-avatar>
               <q-btn :icon="'img:/add.png'"
-                style="
-                  border: 5px solid #42307d;
-                  margin-top: -40px;
-                  z-index: 1;
-                  position: fixed;
-                "
                 round
-                size="22px"
-                class="bg-white text-purple"
+                size="20px"
+                class="bg-white text-purple midBtn"
                 outline /> </q-avatar></q-item-label></q-item-section>
         <q-item-section class="text-center"><q-item-label
             class="text-center text-white"><q-btn flat
@@ -191,5 +183,25 @@ export default {
 .bgColor {
   background: #42307d;
   border-radius: 0 0 20px 20px;
+}
+
+.footer {
+  background: #42307d;
+  border-radius: 0 0 20px 20px;
+  height: 90px;
+}
+
+.background-image {
+  background-size: cover;
+  background-image: url(/bg.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.midBtn {
+  border: 5px solid #42307d;
+  margin-top: -40px;
+  z-index: 1;
+  position: fixed
 }
 </style>

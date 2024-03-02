@@ -1,48 +1,58 @@
 <template>
-  <div> <q-card flat
-      class="border-card">
-      <div class="row justify-between q-px-lg q-pt-md">
-        <div class="text-h5 text-bold q-mt-md">{{ title }}</div>
-        <div class="text-purple-9 cursor-pointer q-pt-md">View All</div>
+  <div>
+    <q-card class="border-card shadow-8 shadow-15">
+      <div class="row justify-between q-px-md">
+        <div class="titleFont text-bold q-mt-xs">{{ title }}</div>
+        <div
+          class="text-color text-caption text-weight-medium cursor-pointer q-pt-sm">
+          View All
+        </div>
       </div>
-      <q-list class="bordered"
-        :class="$q.screen.gt.md ? 'q-px-lg' : 'q-px-sm'">
-        <q-item v-for="{ avatar, title, id } in items"
+      <q-list class="q-px-sm">
+        <q-item v-for="{ avatar, title, active, id } in items"
           :key="id"
           v-ripple
-          class="q-py-md q-my-lg boxStyle cursor-pointer">
+          class="cursor-pointer q-pa-none q-py-xs">
           <q-item-section avatar>
             <q-item-label>
-              <q-avatar size="50px"
+              <q-avatar size="42px"
                 lass="q-mt-sm">
                 <img :src="avatar" /> </q-avatar></q-item-label>
           </q-item-section>
-          <q-item-section class="q-pl-sm text-h6">
-            <q-item-label>{{ title }}</q-item-label>
-            <q-item-label class="text-caption">@benny_spanbauer</q-item-label>
+          <q-item-section>
+            <q-item-label class="text-caption text-bold">{{ title
+              }}</q-item-label>
+            <q-item-label
+              class="text-grey text-subcaption">@benny_spanbauer</q-item-label>
             <q-item-label>
               <slot />
             </q-item-label>
           </q-item-section>
           <q-item-section side>
             <q-item-label>
+              <q-badge label="Follow"
+                size="10px"
+                v-if="active"
+                class="web-button q-pa-xs q-px-sm"
+                rounded />
               <q-badge label="Following"
-                class="web-button q-pa-xs q-px-md"
+                size="10px"
+                v-else
+                outline
+                class="q-pa-xs q-px-sm text-color bg-white"
                 rounded />
             </q-item-label>
           </q-item-section>
         </q-item>
       </q-list>
     </q-card>
-    <q-card flat
-      class="
-                border-card
-                q-mt-lg">
-      <div style="margin-top: -50px; margin-left: -80px;"><img src="tips.png" />
+    <q-card class="q-mt-md shadow-8 shadow-15 border-card">
+      <div>
+        <img src="tipss.svg"
+          class="tips-image" />
       </div>
       <q-card-section class="hintText">
-        Offensive power-ups like “2x” give you extra bonus score for
-        the right
+        Offensive power-ups like “2x” give you extra bonus score for the right
         answer
       </q-card-section>
     </q-card>
@@ -60,27 +70,28 @@ export default {
 </script>
 
 <style scoped>
-.boxStyle {
-  border: 1px solid silver;
-  border-radius: 5px;
-}
-
 .border-card {
-  border: 1px solid silver;
   border-radius: 5px;
 }
 
 .hintText {
-  font-size: 17px;
+  font-size: .9rem;
   font-weight: 500;
   line-height: 26px;
   letter-spacing: 0em;
-  color: #42307D;
+  color: #42307d;
   text-align: left;
   margin-top: -30px;
 }
 
 .web-button {
-  background: #42307D;
+  background: #42307d;
+}
+
+.tips-image {
+  margin-top: -30px;
+  margin-left: -40px;
+  width: 100px;
+  height: 90px;
 }
 </style>

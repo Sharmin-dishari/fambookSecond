@@ -1,11 +1,10 @@
 <template>
-  <div :class="$q.screen.gt.md ? 'q-px-lg' : 'q-px-sm'">
-    <div class="horizontal-scroll-container q-mt-md q-mb-sm q-pt-md q-pb-md">
-      <div class="item q-px-md"
+  <div>
+    <div class="horizontal-scroll-container q-mb-sm q-py-xs">
+      <div class="item q-mx-sm"
         v-for="item in itemList"
         :key="item.id">
-        <img :src="item.avatar"
-          alt="Item Image" />
+        <q-avatar><img :src="item.avatar"></q-avatar>
         <div>{{ item.title }}</div>
       </div>
     </div>
@@ -19,27 +18,27 @@ export default {
       itemList: [
         {
           avatar: "Group.png",
-          title: "Back to School",
+          title: "Kevin",
         },
         {
           avatar: "Group2.png",
-          title: "Do you Know?",
+          title: "Dustin",
         },
         {
           avatar: "Group1.png",
-          title: "World Capital Cities",
+          title: "Rimon",
         },
         {
           avatar: "Group.png",
-          title: "Back to School",
+          title: "Gobinda",
         },
         {
           avatar: "Group1.png",
-          title: "Science",
+          title: "Tumpa",
         },
         {
           avatar: "Group2.png",
-          title: "Gadgets",
+          title: "Kevin",
         },
         {
           avatar: "Group.png",
@@ -47,7 +46,7 @@ export default {
         },
         {
           avatar: "Group1.png",
-          title: "Gaming",
+          title: "Kyling",
         },
       ],
     };

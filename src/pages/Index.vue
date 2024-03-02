@@ -1,17 +1,18 @@
 <template>
-  <div class="bg-color q-pt-md">
-    <div class="row justify-between"
-      :class="$q.screen.gt.sm ? 'q-px-lg' : 'q-px-md'"
-      v-if="$q.screen.lt.md">
-      <div class="text-h6">Category</div>
-      <div class="text-purple-9 cursor-pointer">View All</div>
+  <q-page padding>
+    <div v-if="$q.screen.lt.md"
+      class="q-mx-sm">
+      <img src="/smatur-logo.svg" />
+      <div class="row justify-between q-ma-xs text-bold text-color">
+        <div class="text-h6">Top Scorers</div>
+        <div class="cursor-pointer">View All</div>
+      </div>
+      <horizontal-list />
     </div>
-    <horizontal-list v-if="$q.screen.lt.md" />
-    <q-item-section
-      :class="$q.screen.gt.sm ? 'col-5 q-px-xl' : 'col-12 q-px-xs'">
+    <q-item-section>
       <QuizPost :showView="true" />
     </q-item-section>
-  </div>
+  </q-page>
 
 </template>
 
