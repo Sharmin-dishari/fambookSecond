@@ -139,7 +139,7 @@ export default {
       },
       {
         avatar: "Group2.png",
-        title: "DUstin",
+        title: "Dustin",
       },
       {
         avatar: "Group.png",
