@@ -14,7 +14,7 @@
       Created by <span class="text-bold">Raheel Khan</span> on Jan 19, 2024 12:10 am
     </div>
     <div class="row justify-between">
-    <div class="col-md-2 col-lg-2 col-xl-2 col-3" v-if="$q.screen.gt.sm"></div>
+    <div class="col-md-3 col-lg-2 col-xl-2 col-3" v-if="$q.screen.gt.sm"></div>
     <div class="q-mt-md col-grow">
       <q-item class="q-pa-none q-px-md q-gutter-x-md row justify-center">
         <q-card class="custom-btn q-pa-sm borderBtn container">
@@ -54,16 +54,16 @@
         </q-card>
       </q-item>
       </div>
-      <div class="col-md-2 col-lg-2 col-xl-2 col-3 q-mt-xl q-pr-xl" v-if="$q.screen.gt.sm">
+      <div class="col-md-3 col-lg-2 col-xl-2 col-3 q-mt-lg q-pr-xl" v-if="$q.screen.gt.sm">
       <q-btn class="full-width text-color" style="background: #42307D1A;" label="Invite Friends" no-caps />
       <q-card class="">
       <q-card-section class="q-mt-md">
       <div class="text-grey-7 q-pb-xs text-caption">Share</div>
       <div class="text-caption q-py-xs row" v-for="item in itemList" :key="item.color">
-      <div class="q-mr-sm">
+      <div class="q-mr-sm col-1">
      <q-item-label> <img :src='item.image'/></q-item-label>
       </div>
-      <div class="q-mt-xs"><q-item-label :style="{color: item.color}">{{ item.title }}</q-item-label></div>
+      <div class="q-mt-xs col-grow"><q-item-label :style="{color: item.color}">{{ item.title }}</q-item-label></div>
       </div>
       </q-card-section>
       </q-card>
@@ -112,13 +112,13 @@ export default {
 </script>
 <style>
 .textOne {
-  font-size: .95rem;
+  font-size: 1.06rem;
   font-weight: 600;
   text-align: center;
   color: #42307d;
 }
 .textTwo {
-  font-size: 1.6rem;
+  font-size: 2.43rem;
   font-weight: 600;
   text-align: center;
 }
@@ -129,10 +129,11 @@ export default {
   color: #b1b1b1;
 }
 .btnElement{
-background: #42307D;;
+background: #42307D;
+font-weight: bold;
 }
 .custom-btn {
-  max-width: 340px;
+  max-width: 35vh;
   width: 50%;
   background-color: #ffff;
 }

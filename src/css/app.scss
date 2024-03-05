@@ -1,4 +1,12 @@
-// app global css in SCSS form
+// app global css in SCSS for
+
+@font-face {
+font-family: 'Poppins';
+src: url(/Poppins.ttf);
+}
+* {
+ font-family: Poppins;
+}
 .bg-color {
  background-color: #f4f4f4;
 }
