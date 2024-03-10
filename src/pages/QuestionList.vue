@@ -1,10 +1,16 @@
 <template>
   <q-page>
       <div v-if="$q.screen.lt.md"
-      class="q-ma-sm">
-      <img src="/smatur-logo.svg" />
+      class="row justify-between">
+      <div class="row"><img src="/corner3.png" class="corner-image"/>
+      <img src="/smatur-logo.svg" class="logo-image"
+      />
+      </div>
+      <div><img src="/paper.png" class="paper-image"
+      /></div>
     </div>
-    <div class="textOne text-center q-pt-md text-uppercase">
+ <div :class="$q.screen.gt.sm ? 'q-pt-md' : 'paper2-image'" class="q-mx-xs">   
+ <div class="textOne text-center q-pt-md text-uppercase" >
       Poll result will be shown on 5th Feb 2024!
     </div>
     <div class="textTwo text-center q-py-sm">
@@ -13,8 +19,17 @@
     <div class="textThree text-center">
       Created by <span class="text-bold">Raheel Khan</span> on Jan 19, 2024 12:10 am
     </div>
+ </div>
     <div class="row justify-between">
-    <div class="col-md-3 col-lg-2 col-xl-2 col-3" v-if="$q.screen.gt.sm"></div>
+    <div class="col-md-3 col-lg-2 col-xl-2 col-3" v-if="$q.screen.gt.sm">
+    <div class="paper-left" align="right">
+     <img
+            src="paper1.png"
+            alt="Image"
+            class="custom-image"
+          />
+    </div>
+    </div>
     <div class="q-mt-md col-grow">
       <q-item class="q-pa-none q-px-md q-gutter-x-md row justify-center">
         <q-card class="custom-btn q-pa-sm borderBtn container">
@@ -54,7 +69,14 @@
         </q-card>
       </q-item>
       </div>
-      <div class="col-md-3 col-lg-2 col-xl-2 col-3 q-mt-lg q-pr-xl" v-if="$q.screen.gt.sm">
+      <div class="col-md-3 col-lg-2 col-xl-2 col-3 q-pr-xl" v-if="$q.screen.gt.sm">
+      <div>
+       <img
+            src="/paper.png"
+            alt="Image"
+            class="note-image"
+          />
+      </div>
       <q-btn class="full-width text-color" style="background: #42307D1A;" label="Invite Friends" no-caps />
       <q-card class="">
       <q-card-section class="q-mt-md">
@@ -112,14 +134,18 @@ export default {
 </script>
 <style>
 .textOne {
-  font-size: 1.06rem;
+  font-size: 1.02rem;
   font-weight: 600;
   text-align: center;
   color: #42307d;
 }
 .textTwo {
-  font-size: 2.43rem;
+  font-size: 2.4rem;
   font-weight: 600;
+line-height: 35px;
+letter-spacing: .04em;
+text-align: center;
+
   text-align: center;
 }
 .textThree {
@@ -128,6 +154,38 @@ export default {
   text-align: center;
   color: #b1b1b1;
 }
+.logo-image{
+margin-top: -90px;
+margin-left: -45px;
+}
+.note-image{
+height: 150px;
+margin-top: -40px;
+margin-left: 70px;
+}
+.paper-image{
+margin-top: -20px;
+}
+.paper2-image{
+margin-top:-90px
+}
+.paper-image{
+margin-top: -20px;
+}
+body {
+   background-image: url(/corner1.png);
+   background-position: left bottom; /*Positioning*/
+   background-repeat: no-repeat; /*Prevent showing multiple background images*/
+}
+.corner-image{
+margin-top: -10px;
+height:130px;
+}
+/* body {
+   background-image: url(/corner2.png);
+   background-position: left top;
+   background-repeat: no-repeat; 
+} */
 .btnElement{
 background: #42307D;
 font-weight: bold;
@@ -142,7 +200,10 @@ font-weight: bold;
   color: white;
   
 }
-
+.paper-left{
+margin-top: -80px; 
+margin-right: -80px;
+}
 .lebel-margin {
   font-weight: 400;
 }

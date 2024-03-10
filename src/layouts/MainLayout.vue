@@ -89,10 +89,10 @@
       </q-toolbar>
     </q-header>
 
-    <q-page-container class="background-image">
+    <q-page-container>
       <router-view />
     </q-page-container>
-    <q-footer
+    <!-- <q-footer
       class="backdrop-effect text-primary shadow-24 footer"
       v-if="$q.screen.lt.sm"
       reveal
@@ -134,28 +134,7 @@
           ></q-item-section
         >
       </q-item>
-      <!-- <q-tabs active-color="primary"
-        indicator-color="transparent"
-        no-caps
-        class="text-white full-height "
-        content-class="layout-tabs">
-        <q-route-tab :to="'/home'"
-          icon="home"
-          label="Home" />
-        <q-route-tab :to="{ query: { tab: '1' } }"
-          icon="view_carousel"
-          label="My Post" />
-        <q-route-tab>
-
-        </q-route-tab>
-        <q-route-tab to="/following"
-          label="Following"
-          icon="people" />
-        <q-route-tab to="/profile"
-          label="Profile"
-          icon="person_outline" />
-      </q-tabs> -->
-    </q-footer>
+    </q-footer> -->
   </q-layout>
 </template>
 

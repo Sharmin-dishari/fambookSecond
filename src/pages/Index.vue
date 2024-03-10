@@ -1,5 +1,5 @@
 <template>
-  <q-page padding>
+  <q-page padding class="background-image">
     <div v-if="$q.screen.lt.md"
       class="q-mx-sm">
       <img src="/smatur-logo.svg" />
@@ -99,5 +99,11 @@ export default {
   text-align: center;
   margin-top: 20px;
   padding: 10px 20px;
+}
+.background-image {
+  background-size: cover;
+  background-image: url(/bg.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
 }
 </style>
